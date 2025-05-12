@@ -1,0 +1,12 @@
+.page-title__title {
+    font-weight: 500;
+    font-size: 54px;
+    line-height: 100%;
+    color: #000;
+    text-align: center;
+}
+.page-title {
+    background-color: #EEEEEE;
+    padding-top: 87px;
+    padding-bottom: 101px;
+}

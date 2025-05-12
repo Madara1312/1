@@ -1,0 +1,38 @@
+.options__title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 167%;
+    text-transform: uppercase;
+    color: #000;
+   
+}
+.options__list {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+.options__list-item {
+    font-weight: 400;
+font-size: 13px;
+line-height: 129%;
+text-transform: uppercase;
+color: #000;
+opacity: 0.3;
+gap: 47px;
+}
+.options__list-item.current {
+    opacity: 1;
+}
+.options__arrows {
+    display: flex;
+    gap: 18px;
+}
+.options__arrow {
+    border: none;
+    opacity: 0.3;
+    background-color: transparent;
+}
+.options__arrow.current {
+    opacity: 1;
+}
+

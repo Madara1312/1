@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nerds-Shop</title>
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header__wrapper">
+            <a href="index.html" class="header__logo">
+                <img src="src/img/nerds-logo.svg" alt="logo-nerds" class="header__logo-img">
+            </a>
+            <nav class="header__nav">
+                <ul class="header__list">
+                    <li class="header__item">
+                        <a href="#" class="header__link">
+                            Студия
+                        </a>
+                    </li>
+                    <li class="header__item">
+                        <a href="#" class="header__link">
+                            Клиенты
+                        </a>
+                    </li>
+                    <li class="header__item">
+                        <a href="#" class="header__link">
+                            Магазин
+                        </a>
+                    </li>
+                    <li class="header__item">
+                        <a href="#" class="header__link">
+                            Контакты
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <a href="#" class="header__cart header__link">
+                Корзина
+            </a>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="page-title">
+            <div class="container">
+                <h1 class="page-title__title">
+                    Магазин готовых шаблонов
+                </h1>
+            </div>
+        </section>
+
+        <section class="shop">
+            <div class="container shop__container">
+                <div class="filter shop__filter">
+                    <form action="" class="filter__form">
+                        <div class="filter__block">
+                            <h3 class="filter__title">
+                                Стоимость:
+                            </h3>
+                            <div class="filter__slider">
+                                <div class="filter__slider-track"></div>
+                                <input type="range" min="0" max="22000" value="0" id="slider-1" oninput="slideOne()">
+                                <input type="range" min="0" max="22000" value="15000" id="slider-2"
+                                    oninput="slideTwo()">
+                            </div>
+                            <div class="filter__numbers">
+                                <div class="filter__number">
+                                    <label for="range1" class="filter__number-title">
+                                        от
+                                    </label>
+                                    <input type="text" id="range1" class="filter__number-value">
+
+                                </div>
+                                <div class="filter__number">
+                                    <label for="range2" class="filter__number-title">
+                                        до
+                                    </label>
+                                    <input type="text" id="range2" class="filter__number-value">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter__block">
+                            <h3 class="filter__title">
+
+                                Сетка:
+                            </h3>
+                            <ul class="filter__list">
+                                <li class="filter__item">
+                                    <input type="radio" value="Адаптивная" name="filter-radio" id="radio-1" checked
+                                        class="filter__radio">
+                                    <label for="radio-1" class="filter__name-radio">Адаптивная</label>
+                                </li>
+                                <li class="filter__item">
+                                    <input type="radio" value="Фиксированная" name="filter-radio" id="radio-2"
+                                        class="filter__radio">
+                                    <label for="radio-2" class="filter__name-radio">Фиксированная</label>
+                                </li>
+                                <li class="filter__item">
+                                    <input type="radio" value="Резиновая" name="filter-radio" id="radio-3"
+                                        class="filter__radio" disabled>
+                                    <label for="radio-3" class="filter__name-radio">Резиновая</label>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="filter__block">
+                            <h3 class="filter__title">
+                                Особенности:
+                            </h3>
+                            <ul class="filter__list">
+                                <li class="filter__item">
+                                    <input type="checkbox" value="Слайдер" name="filter-checkbox" id="checkbox-1"
+                                        class="filter__checkbox" checked disabled>
+                                    <label for="checkbox-1" class="filter__name-checkbox">Слайдер</label>
+                                </li>
+                                <li class="filter__item">
+                                    <input type="checkbox" value="Блок преимуществ" name="filter-checkbox"
+                                        id="checkbox-2" class="filter__checkbox" checked>
+                                    <label for="checkbox-2" class="filter__name-checkbox">Блок преимуществ</label>
+                                </li>
+                                <li class="filter__item">
+                                    <input type="checkbox" value="Новости" name="filter-checkbox" id="checkbox-3"
+                                        class="filter__checkbox">
+                                    <label for="checkbox-3" class="filter__name-checkbox">Новости</label>
+                                </li>
+                                <li class="filter__item">
+                                    <input type="checkbox" value="Галерея" name="filter-checkbox" id="checkbox-4"
+                                        class="filter__checkbox">
+                                    <label for="checkbox-4" class="filter__name-checkbox">Галерея</label>
+                                </li>
+                                <li class="filter__item">
+                                    <input type="checkbox" value="Корзина" name="filter-checkbox" id="checkbox-5"
+                                        class="filter__checkbox">
+                                    <label for="checkbox-5" class="filter__name-checkbox">Корзина</label>
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="filter__show">
+                            ПОКАЗАТЬ
+                        </button>
+                    </form>
+                </div>
+                <div class="content shop__content">
+                    <div class="options shop__options">
+                        <h3 class="options__title">
+                            СОртировать:
+                        </h3>
+                        <ul class="options__list">
+                            <li class="options__list-item current">
+                                По цене
+                            </li>
+                            <li class="options__list-item">
+                                По типу
+                            </li>
+                            <li class="options__list-item">
+                                По названию
+                            </li>
+                        </ul>
+                        <div class="options__arrows">
+                            <button class="options__arrow current">
+                                <svg width="11" height="10" viewBox="0 0 11 10" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.5 10L0 0H11" fill="#231F20" />
+                                </svg>
+                            </button>
+                            <button class="options__arrow">
+                                <svg width="11" height="10" viewBox="0 0 11 10" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+
+                                    <path d="M5.5 0L0 10H11L5.5 0Z" fill="#231f20" />
+
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="cards shop__cards">
+                        <ul class="cards__list">
+                            <li class="cards__item">
+                                <svg class="cards__shape" width="360" height="40" viewBox="0 0 360 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M4 0H356C358.2 0 360 1.8 360 4V40H0V4C0 1.8 1.8 0 4 0ZM16.9288 23.5C18.1792 25.6658 20.4901 27 22.991 27C26.857 27 29.991 23.866 29.991 20C29.991 16.134 26.857 13 22.991 13C20.4901 13 18.1792 14.3342 16.9288 16.5C15.6784 18.6658 15.6784 21.3342 16.9288 23.5ZM46.002 27C43.5011 27 41.1902 25.6658 39.9398 23.5C38.6893 21.3342 38.6893 18.6658 39.9398 16.5C41.1902 14.3342 43.5011 13 46.002 13C49.8679 13 53.002 16.134 53.002 20C53.002 23.866 49.8679 27 46.002 27ZM62.9508 23.5C64.2012 25.6658 66.5121 27 69.0129 27C72.8789 27 76.0129 23.866 76.0129 20C76.0129 16.134 72.8789 13 69.0129 13C66.5121 13 64.2012 14.3342 62.9508 16.5C61.7003 18.6658 61.7003 21.3342 62.9508 23.5Z" fill="#4D4D4D" fill-opacity="0.11"/>
+                                    </svg>
+                                    <img src="src/img/pink.png" alt="pink preview" class="cards__img">
+                                    <div class="cards__info">
+                                        <a href="" class="cards__link">
+                                            Pink App
+                                        </a>
+                                        <p class="cards__descr">
+                                            Продуктовый лендинг<br>приложения для iOS и Android
+                                        </p>
+                                        <a href="" class="cards__button">
+                                            9 900 ₽
+                                        </a>
+                                      
+                                    </div>
+                            </li>
+                            <li class="cards__item">
+                                <svg class="cards__shape" width="360" height="40" viewBox="0 0 360 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M4 0H356C358.2 0 360 1.8 360 4V40H0V4C0 1.8 1.8 0 4 0ZM16.9288 23.5C18.1792 25.6658 20.4901 27 22.991 27C26.857 27 29.991 23.866 29.991 20C29.991 16.134 26.857 13 22.991 13C20.4901 13 18.1792 14.3342 16.9288 16.5C15.6784 18.6658 15.6784 21.3342 16.9288 23.5ZM46.002 27C43.5011 27 41.1902 25.6658 39.9398 23.5C38.6893 21.3342 38.6893 18.6658 39.9398 16.5C41.1902 14.3342 43.5011 13 46.002 13C49.8679 13 53.002 16.134 53.002 20C53.002 23.866 49.8679 27 46.002 27ZM62.9508 23.5C64.2012 25.6658 66.5121 27 69.0129 27C72.8789 27 76.0129 23.866 76.0129 20C76.0129 16.134 72.8789 13 69.0129 13C66.5121 13 64.2012 14.3342 62.9508 16.5C61.7003 18.6658 61.7003 21.3342 62.9508 23.5Z" fill="#4D4D4D" fill-opacity="0.11"/>
+                                    </svg>
+                                    <img class="cards__img" src="src/img/borodinski.png" alt="borodindki preview">
+                                    <div class="cards__info">
+                                        <a href="" class="cards__link">
+                                            Borodinski
+                                        </a>
+                                        <p class="cards__descr">
+                                            Продуктовый лендинг<br>приложения для iOS и Android
+                                        </p>
+                                        <a href="" class="cards__button">
+                                            8 900 ₽
+                                        </a>
+                                    </div>
+                            </li>
+                            <li class="cards__item">
+                                <svg class="cards__shape" width="360" height="40" viewBox="0 0 360 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M4 0H356C358.2 0 360 1.8 360 4V40H0V4C0 1.8 1.8 0 4 0ZM16.9288 23.5C18.1792 25.6658 20.4901 27 22.991 27C26.857 27 29.991 23.866 29.991 20C29.991 16.134 26.857 13 22.991 13C20.4901 13 18.1792 14.3342 16.9288 16.5C15.6784 18.6658 15.6784 21.3342 16.9288 23.5ZM46.002 27C43.5011 27 41.1902 25.6658 39.9398 23.5C38.6893 21.3342 38.6893 18.6658 39.9398 16.5C41.1902 14.3342 43.5011 13 46.002 13C49.8679 13 53.002 16.134 53.002 20C53.002 23.866 49.8679 27 46.002 27ZM62.9508 23.5C64.2012 25.6658 66.5121 27 69.0129 27C72.8789 27 76.0129 23.866 76.0129 20C76.0129 16.134 72.8789 13 69.0129 13C66.5121 13 64.2012 14.3342 62.9508 16.5C61.7003 18.6658 61.7003 21.3342 62.9508 23.5Z" fill="#4D4D4D" fill-opacity="0.11"/>
+                                    </svg>
+                                    <img class="cards__img" src="src/img/borodinski.png" alt="borodindki preview">
+                                    <div class="cards__info">
+                                        <a href="" class="cards__link">
+                                            Borodinski
+                                        </a>
+                                        <p class="cards__descr">
+                                            Продуктовый лендинг<br>приложения для iOS и Android
+                                        </p>
+                                        <a href="" class="cards__button">
+                                            8 900 ₽
+                                        </a>
+                                    </div>
+                            </li>
+
+                        </ul>
+                        <div class="pagination">
+                            <ul class="pagination__list">
+                                <li class="pagination__item">
+                                    <a href="" class="pagination__link current ">
+                                        1
+                                    </a>                                  
+                                </li>
+                                <li class="pagination__item">
+                                    <a href="" class="pagination__link">
+                                        2
+                                    </a>                                  
+                                </li>
+                                <li class="pagination__item">
+                                    <a href="" class="pagination__link">
+                                        3
+                                    </a>                                  
+                                </li>
+                                <li class="pagination__item">
+                                    <a href="" class="pagination__link next">
+                                        следующая
+                                    </a>                                  
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="map">
+            <iframe
+                src="https://yandex.ru/map-widget/v1/?um=constructor%3A99391dd40f228688af1930a8745008592b442f1297465c1df7af43979b0c4942&amp;source=constructor"
+                width="100%" height="486" frameborder="0"></iframe>
+        </div>
+        <div class="container footer__wrapper">
+            <div class="footer__info">
+                <h4 class="footer__title">
+                    NЁRDS DESIGN STUDIO
+                </h4>
+                <p class="footer__descr">
+                    191186, Санкт-Петербург, <br>ул. Б. Конюшенная, д. 19/8 <br> <br> тел. <a href="tel:+78122757575">+7
+                        (812) 275-75-75</a>
+                </p>
+                <a href="#" class="footer__btn">
+                    Напишите нам
+                </a>
+
+            </div>
+            <div class="footer__contacts">
+                <ul class="footer__contacts-list">
+                    <li class="footer__contacts-item">
+                        <a href="#" class="footer__contacts-link">
+                            <svg width="26" height="16" viewBox="0 0 26 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M16.138 11.5898C17.094 11.2787 18.318 13.6438 19.621 14.549C20.599 15.2347 21.348 15.0866 21.348 15.0866L24.821 15.0363C24.821 15.0363 26.636 14.9235 25.778 13.4716C25.707 13.3508 25.275 12.3953 23.193 10.4289C21.016 8.37186 21.311 8.70513 23.932 5.14888C25.529 2.9811 26.168 1.65707 25.968 1.09322C25.776 0.550524 24.603 0.691485 24.603 0.691485L20.69 0.718671C20.309 0.719677 19.986 0.838488 19.839 1.23721C19.836 1.24123 19.218 2.91465 18.394 4.33735C16.653 7.34687 15.958 7.50696 15.67 7.31868C15.009 6.8827 15.176 5.56975 15.176 4.63639C15.176 1.7195 15.608 0.503201 14.33 0.189059C13.903 0.084345 13.591 0.0158781 12.502 0.00580945C11.11 -0.0153347 9.92797 0.00580946 9.25797 0.337068C8.81297 0.561599 8.47197 1.05396 8.67897 1.08215C8.93897 1.11739 9.52197 1.24325 9.83397 1.67217C10.235 2.22796 10.223 3.47346 10.223 3.47346C10.223 3.47346 10.452 6.90788 9.68297 7.33378C9.15497 7.62577 8.43297 7.02971 6.87997 4.29707C6.08697 2.89954 5.48797 1.35501 5.48797 1.35501C5.48797 1.35501 5.37197 1.06805 5.16197 0.910982C4.91197 0.724712 4.56197 0.665307 4.56197 0.665307L0.84797 0.689471C0.84797 0.689471 0.28997 0.705581 0.0849697 0.95327C-0.0970303 1.17277 0.0699697 1.62586 0.0699697 1.62586C0.0699697 1.62586 2.97897 8.5541 6.27297 12.0439C9.29297 15.2477 12.725 15.0353 12.725 15.0353H14.28C14.28 15.0353 14.749 14.9809 14.989 14.7212C15.213 14.4795 15.203 14.0254 15.203 14.0254C15.203 14.0254 15.172 11.9019 16.138 11.5898Z"
+                                    fill="white" />
+                            </svg>
+
+                        </a>
+                    </li>
+                    <li class="footer__contacts-item">
+                        <a href="#" class="footer__contacts-link">
+                            <svg width="12" height="23" viewBox="0 0 12 23" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 4.02746V0H8C5.79086 0 4 1.80316 4 4.02746V8.05493H0V12.0824H4V22.1511H8V12.0824H12V8.05493H8V4.02746H12Z"
+                                    fill="white" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="footer__contacts-item">
+                        <a href="#" class="footer__contacts-link">
+                            <svg width="21" height="22" viewBox="0 0 21 22" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M3 0H18C19.65 0 21 1.35927 21 3.0206V18.1236C21 19.7849 19.65 21.1442 18 21.1442H3C1.35 21.1442 0 19.7849 0 18.1236V3.0206C0 1.35927 1.35 0 3 0ZM14 10.5721C14 8.62884 12.43 7.04806 10.5 7.04806C8.57 7.04806 7 8.62884 7 10.5721C7 12.5153 8.57 14.0961 10.5 14.0961C12.43 14.0961 14 12.5153 14 10.5721ZM3 18.1236V9.06179H4.181C4.0626 9.55644 4.00186 10.0633 4 10.5721C4 14.1866 6.91015 17.1167 10.5 17.1167C14.0899 17.1167 17 14.1866 17 10.5721C16.9986 10.0633 16.9379 9.55635 16.819 9.06179H18V18.1236H3ZM14 7.04806H18V3.0206H14V7.04806Z"
+                                    fill="white" />
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+                <div class="footer__contacts-text">
+                    <h2 class="footer__contacts-title">
+                        Давайте дружить, это выгодно!
+                    </h2>
+                    <p class="footer__contacts-descr">
+                        Скидка 10% для друзей из социальных сетей.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- примеры инпутов -->
+    <!-- <form action="">
+        <input type="text" name="" id="">
+        <input type="tel" name="" id="">
+        <input type="number" name="" id="">
+        <input type="checkbox" name="" id="">
+        <input type="checkbox" name="" id="">
+        <input type="checkbox" name="" id="">
+        <input type="radio" name="radio-group" id="">
+        <input type="radio" name="radio-group" id="">
+        <input type="radio" name="radio-group" id="">
+        <input type="range" name="" id="">
+        <select name="" id="">
+            <option value="123">123test</option>
+            <option value="456">456text</option>
+            <option value="789">789example</option>
+        </select>
+    </form> -->
+
+
+    <!-- связываем инпут с подписью -->
+    <!-- <form action="">
+        <div class="">
+            <label for="radio-1">Радио 1</label>
+            <input type="radio" name="group-second" id="radio-1">
+        </div>
+        <div class="">
+            <label for="radio-2">Радио 2</label>
+            <input type="radio" name="group-second" id="radio-2">
+        </div>
+        <div class="">
+            <label for="radio-3">Радио 3</label>
+            <input type="radio" name="group-second" id="radio-3">
+        </div>
+
+    </form> -->
+
+    <script src="src/js/slider.js"></script>
+</body>
+
+</html>
